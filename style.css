@@ -1,0 +1,378 @@
+:root {
+    --font-family: 'Inter', sans-serif;
+    --margin-top: 5px;
+    --box_shadow: 9px -6px 15px rgb(16, 14, 14);
+    --theme-color: rgb(255, 38, 0);
+    --row-background-color: black;
+    --white-text: white;
+}
+
+
+/* loader css starts */
+
+.preloader {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: helvetica, arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    z-index: 9999999;
+}
+
+.preloader span {
+    position: absolute;
+    width: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    text-transform: uppercase;
+}
+
+.preloader span::before,
+.preloader span::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #ED5E29;
+    position: absolute;
+    animation: load 0.7s infinite alternate ease-in-out;
+}
+
+.preloader span::before {
+    top: 0;
+}
+
+.preloader span::after {
+    bottom: 0;
+}
+
+@keyframes load {
+    0% {
+        left: 0;
+        height: 30px;
+        width: 15px;
+    }
+    50% {
+        height: 8px;
+        width: 40px;
+    }
+    100% {
+        left: 235px;
+        height: 30px;
+        width: 15px;
+    }
+}
+
+
+/* loader css ends */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.836);
+}
+
+.subheading {
+    margin: 20px 0 30px 0;
+    text-transform: capitalize;
+    color: var(--theme-color);
+    font-size: 2.8rem;
+}
+
+.subheading-span {
+    color: var(--white-text);
+}
+
+::selection {
+    background-color: grey;
+    color: black;
+}
+
+@keyframes changestate {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.container-fluid {
+    padding: 0 50px;
+}
+
+
+/* navbar styling */
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(241, 236, 236);
+    font-weight: 600;
+}
+
+#navbar_main {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 39px;
+}
+
+.navbar-nav li:not(:last-child) {
+    margin-right: 15px;
+    padding: 0 10px;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--theme-color)!important;
+}
+
+.tech {
+    color: var(--white-text);
+}
+
+.navbar-nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: var(--theme-color);
+    transform: scaleX(0);
+    transition: transform 400ms ease-in-out;
+}
+
+.navbar-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* first section styling starts */
+
+.first_section {
+    margin-top: var(--margin-top);
+    background-color: var(--row-background-color);
+    box-shadow: var(--box_shadow);
+}
+
+.first_section_child1 {
+    border-radius: 10px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.first_section_child1 .intros {
+    color: var(--theme-color);
+    display: inline-block;
+    animation-name: changestate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.first_section_child1 .intro {
+    font-size: 3rem;
+    color: var(--white-text);
+    font-weight: 900;
+}
+
+
+/* second section styling */
+
+.second-section {
+    background-color: var(--row-background-color);
+    margin-top: var(--margin-top);
+    box-shadow: var(--box_shadow);
+    padding-bottom: 30px;
+}
+
+.second-section .skill {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    grid-template-columns: 15% 15% 15%;
+    grid-template-rows: 100px 100px 100px;
+    gap: 30px;
+}
+
+.second-section .skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform ease-in-out 400ms;
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(242, 240, 240, 0.107);
+}
+
+.skills:hover {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 29px 1px var(--theme-color);
+}
+
+.skills a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--white-text);
+}
+
+
+/* about us section  */
+
+.about-section {
+    box-shadow: var(--box_shadow);
+    text-align: center;
+    margin-top: var(--margin-top);
+    background-color: var(--row-background-color);
+    color: var(--white-text);
+    padding: 10px 0 40px 0;
+}
+
+.about-section .about-us-paragraph {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+
+.about-section .about-us-paragraph a {
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 8px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: var(--theme-color);
+    transition: all ease-in 100ms;
+}
+
+.about-section .about-us-paragraph a:active {
+    transform: scale(.8);
+}
+
+.about-section .about-us-paragraph a:hover {
+    background-color: rgb(103, 33, 7);
+}
+
+
+/* contact us section starts */
+
+.contact-us-section {
+    margin-top: var(--margin-top);
+    background-color: var(--row-background-color);
+    color: var(--white-text);
+    box-shadow: var(--box_shadow);
+    padding: 0px 0 40px 0;
+}
+
+
+/* .contact-us-section .col-md-3 {} */
+
+.contact-us-section .contactus-icons {
+    font-size: 2.5rem;
+}
+
+.contact-us-section a {
+    text-decoration: none;
+    color: var(--white-text);
+}
+
+.contact-us-section a:hover {
+    color: var(--theme-color)
+}
+
+.contact-types-heading {
+    color: var(--theme-color);
+}
+
+
+/* myworks  section starts */
+
+.myworks {
+    background-color: var(--row-background-color);
+    margin-top: var(--margin-top);
+    padding: 10px 0 40px 0;
+    box-shadow: var(--box_shadow);
+}
+
+.myworks .projectitems-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    padding: 10px;
+}
+
+.myworks .projects {
+    border-radius: 10px;
+    margin: 0 10px 0 10px;
+    padding: 15px 0 15px 0;
+    background-color: rgba(242, 240, 240, 0.107);
+    transition: all ease-in-out 500ms;
+}
+
+.myworks .projects:hover {
+    transform: scale(.7);
+    background-color: var(--theme-color);
+}
+
+.myworks .projects a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+
+/* footer */
+
+.footer {
+    margin-top: var(--margin-top);
+    /* background-color: rgba(22, 23, 23, 0.29); */
+    padding: 10px 0 30px 0;
+    box-shadow: var(--box_shadow);
+}
+
+.footer .col-auto {
+    padding-top: 10px;
+}
+
+.followus {
+    margin: 20px 0 30px 0;
+    text-transform: capitalize;
+    color: var(--white-text);
+    font-size: 2.8rem;
+}
+
+.social-icons {
+    color: var(--white-text);
+    font-size: 3rem;
+    display: block;
+    transition: all ease 500ms;
+}
+
+.social-icons:hover {
+    transform: rotate3d(1, 5, 1, 30deg);
+    color: var(--theme-color);
+}
+
+
+/* responsive styling starts */
+
+
+/* navbar responsive styling starts */
+
+
+/* navbar responsive styling ends */
